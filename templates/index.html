@@ -49,7 +49,7 @@
                 <h2 class="display-3">Codes you've Created :</h2>
                 <ul>
                     {% for code in codes %}
-                        <a class="text-decoration-none" href="{{ url_for('redirect_to_url', code=code) }}">
+                        <a class="text-decoration-none" href="{{ url_for('redirect_to_url', code=code) }}" target="_blank">
                             <li>{{ code }}</li>
                         </a>
                     {% endfor %}
