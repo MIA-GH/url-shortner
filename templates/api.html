@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    API || url shortner by miastudios
+{% endblock title %}
+
+{% block content %}
+    <div class="container my-5 text-center shadow-sm p-5">
+        {
+            {% for dt in data %}
+                "{{ dt }}"
+            {% endfor %}
+        }
+    </div>
+{% endblock content %}

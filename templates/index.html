@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    flask essential training || Lynda.com by miastudios
+{% endblock title %}
+
+{% block content %}
+    <div class="container my-5">
+        <div class="card-deck mb-3">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header bg-info">
+                    <h4 class="my-0 font-weight-normal text-center text-white text-uppercase font-weight-bolder">Website</h4>
+                </div>
+
+                <div class="card-body">
+                    <form action="your-url" method="post">
+                        <label class='my-3' for="url">Website url</label>
+                        <input type="url" class="form-control" name="url" placeholder="Website url" value="" required>
+                        <label class='my-3' for="code">Short Name</label>
+                        <input type="text" name="code" class="form-control" placeholder="Short Name" value="" required>
+                        <button class="btn btn-primary btn-lg btn-block my-4 text-uppercase">Shorten</button>
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header bg-info">
+                    <h4 class="my-0 font-weight-normal text-center text-white text-uppercase font-weight-bolder">File</h4>
+                </div>
+
+                <div class="card-body">
+                    <form action="your-url" method="post" enctype="multipart/form-data">
+                        <label class='my-3' for="url">File</label>
+                        <input type="file" class="form-control" name="file" placeholder="Website url" value="" required>
+                        <label class='my-3' for="code">Short Name</label>
+                        <input type="text" name="code" class="form-control" placeholder="Short Name" value="" required>
+                        <button class="btn btn-primary btn-lg btn-block my-4 text-uppercase">Shorten</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-2 mb-5 shadow">
+        <div class="codes-created container p-3">
+            {% if codes %}
+                <h2 class="display-3">Codes you've Created :</h2>
+                <ul>
+                    {% for code in codes %}
+                        <a class="text-decoration-none" href="{{ url_for('redirect_to_url', code=code) }}">
+                            <li>{{ code }}</li>
+                        </a>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock content %}

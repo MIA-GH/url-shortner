@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Your Url "{{ code }}"
+{% endblock title %}
+
+{% block content %}
+    <div class="container shadow my-5 p-3 text-center">
+        <h1 class="jumbotron-heading text-uppercase" >URLs page</h1>
+        <h1 class="display-6 my-4 text-success">Url ShortCode Created successfully</h1>
+        <h2 class="display-5">This is the code you passed : 
+        <span class="font-weight-bolder text-success">{{ code }}</span></h2>
+    </div>
+{% endblock content %}
